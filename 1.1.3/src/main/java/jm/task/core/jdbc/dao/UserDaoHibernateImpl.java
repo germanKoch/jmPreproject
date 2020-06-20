@@ -41,19 +41,19 @@ public class UserDaoHibernateImpl implements UserDao {
     }
 
     @Override
-    public void saveUser(String name, String lastName, byte age) {
-        Transaction transaction = session.beginTransaction();
-        session.save(new User(name, lastName, age));
-        transaction.commit();
-        session.close();
-    }
-
-    @Override
     public void removeUserById(long id) {
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("DELETE User WHERE id = (:id)");
         query.setParameter("id",id);
         query.executeUpdate();
+        transaction.commit();
+        session.close();
+    }
+
+    @Override
+    public void saveUser(String name, String lastName, byte age) {
+        Transaction transaction = session.beginTransaction();
+        session.save(new User(name, lastName, age));
         transaction.commit();
         session.close();
     }
