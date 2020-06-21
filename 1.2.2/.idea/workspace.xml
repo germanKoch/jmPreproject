@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d14e095-ac64-45b8-8e21-30e77139c195" name="Default Changelist" comment="third" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1damENCVlknce6kzDm5mZk0Bfju" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2.1.3" />
+  </component>
+  <component name="RunManager" selected="JUnit.AppTest">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="spring-helloworld" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-helloworld" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d14e095-ac64-45b8-8e21-30e77139c195" name="Default Changelist" comment="" />
+      <created>1592671465580</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592671465580</updated>
+      <workItem from="1592671477093" duration="5564000" />
+      <workItem from="1592723299029" duration="1525000" />
+    </task>
+    <task id="LOCAL-00001" summary="compare">
+      <created>1592671564164</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592671564164</updated>
+    </task>
+    <task id="LOCAL-00002" summary="third">
+      <created>1592671601159</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592671601159</updated>
+    </task>
+    <task id="LOCAL-00003" summary="third">
+      <created>1592671633202</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592671633202</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="third_task" />
+    <MESSAGE value="compare" />
+    <MESSAGE value="third" />
+    <option name="LAST_COMMIT_MESSAGE" value="third" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="763" y="300" width="426" height="487" key="FileChooserDialogImpl" timestamp="1592724927456">
+      <screen x="32" y="0" width="1888" height="1080" />
+    </state>
+    <state x="763" y="300" width="426" height="487" key="FileChooserDialogImpl/32.0.1888.1080@32.0.1888.1080" timestamp="1592724927456" />
+    <state width="1842" height="288" key="GridCell.Tab.0.bottom" timestamp="1592724929135">
+      <screen x="32" y="0" width="1888" height="1080" />
+    </state>
+    <state width="1842" height="288" key="GridCell.Tab.0.bottom/32.0.1888.1080@32.0.1888.1080" timestamp="1592724929135" />
+    <state width="1842" height="288" key="GridCell.Tab.0.center" timestamp="1592724929135">
+      <screen x="32" y="0" width="1888" height="1080" />
+    </state>
+    <state width="1842" height="288" key="GridCell.Tab.0.center/32.0.1888.1080@32.0.1888.1080" timestamp="1592724929135" />
+    <state width="1842" height="288" key="GridCell.Tab.0.left" timestamp="1592724929134">
+      <screen x="32" y="0" width="1888" height="1080" />
+    </state>
+    <state width="1842" height="288" key="GridCell.Tab.0.left/32.0.1888.1080@32.0.1888.1080" timestamp="1592724929134" />
+    <state width="1842" height="288" key="GridCell.Tab.0.right" timestamp="1592724929135">
+      <screen x="32" y="0" width="1888" height="1080" />
+    </state>
+    <state width="1842" height="288" key="GridCell.Tab.0.right/32.0.1888.1080@32.0.1888.1080" timestamp="1592724929135" />
+    <state x="769" y="458" width="413" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592671535243">
+      <screen x="32" y="0" width="1888" height="1080" />
+    </state>
+    <state x="769" y="458" width="413" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/32.0.1888.1080@32.0.1888.1080" timestamp="1592671535243" />
+  </component>
+</project>
