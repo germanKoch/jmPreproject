@@ -18,7 +18,7 @@ public class Util {
                     append("3306/").                //port
                     append("preproj1?").          //db name
                     append("user=german&").          //login
-                    append("password=Germanpaulivalerman123");       //password
+                    append("password=german");       //password
 
             System.out.println("URL: " + url + "\n");
 
