@@ -32,7 +32,7 @@ public class Util {
         configuration.setProperty("hibernate.connection.username", "german");
         configuration.setProperty("hibernate.connection.password", "Germanpaulivalerman123");
         configuration.setProperty("hibernate.show_sql", "true");
-        configuration.setProperty("hibernate.hbm2ddl.auto", "create");
+        configuration.setProperty("hibernate.hbm2ddl.auto", "update");
         return configuration;
     }
 
