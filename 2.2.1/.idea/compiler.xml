@@ -9,7 +9,7 @@
         <module name="spring_hibernate" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="13">
       <module name="spring_hibernate" target="1.8" />
     </bytecodeTargetLevel>
   </component>
