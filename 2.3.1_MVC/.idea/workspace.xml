@@ -25,9 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48648603-e419-486a-aa7e-0de38177fc4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../2.2.2/spring-mvc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../2.2.2/spring-mvc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2.2.2/src/main/java/web/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2.2.2/src/main/java/web/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2.2.2/src/webapp/WEB-INF/pages/cars.html" beforeDir="false" afterPath="$PROJECT_DIR$/../2.2.2/src/webapp/WEB-INF/pages/cars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
