@@ -31,8 +31,14 @@ public class HelloController {
         carService.addCar(new Car("Audi", "Germany", 12));
         carService.addCar(new Car("Lada", "Russia", 666));
         carService.addCar(new Car("BMW", "Germany", 14));
-        model.addAttribute("locale",locale);
-        model.addAttribute("cars",carService.getAllCars());
+        if (locale.equals("en")) {
+            model.addAttribute("title","CARS");
+        } else if (locale.equals("ru")) {
+            model.addAttribute("title", "МАШИНЫ");
+        } else {
+            model.addAttribute("title","____");
+        }
+        model.addAttribute("cars", carService.getAllCars());
         return "cars";
     }
 }

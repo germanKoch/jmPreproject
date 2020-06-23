@@ -28,11 +28,7 @@
     </style>
 </head>
 <body>
-    <div th:switch="${locale}">
-        <h1 th:case="'en'">CARS</h1>
-        <h1 th:case="'ru'">МАШИНЫ</h1>
-        <h1 th:case="*">----</h1>
-    </div>
+    <h1 th:text="${title}">CARS</h1>
     <table>
         <tr>
             <th class="bold">name</th>
