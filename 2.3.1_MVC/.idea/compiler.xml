@@ -6,11 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TaskJDBC" />
+        <module name="2.3.1_MVC" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="TaskJDBC" target="7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
