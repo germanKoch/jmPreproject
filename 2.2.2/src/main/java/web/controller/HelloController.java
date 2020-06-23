@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import web.model.Car;
 import web.service.CarService;
 
@@ -25,11 +26,12 @@ public class HelloController {
     }
 
     @GetMapping(value = "/cars")
-    public String printCars(Model model) {
+    public String printCars(Model model, @RequestParam String locale) {
         CarService carService = CarService.getInstance();
         carService.addCar(new Car("Audi", "Germany", 12));
         carService.addCar(new Car("Lada", "Russia", 666));
         carService.addCar(new Car("BMW", "Germany", 14));
+        model.addAttribute("locale",locale);
         model.addAttribute("cars",carService.getAllCars());
         return "cars";
     }

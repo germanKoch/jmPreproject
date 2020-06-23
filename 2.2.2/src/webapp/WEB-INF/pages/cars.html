@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
     <style>
-        table {
-            margin: auto;
+
+        body {
+            text-align: center;
         }
-        th{
+        table {
+           display: inline-block;
+        }
+
+        th {
             border: 1px solid black;
             font-weight: 100;
         }
@@ -16,25 +21,32 @@
         .bold {
             font-weight: 600;
         }
+
         th {
             width: 100px;
         }
     </style>
 </head>
 <body>
-<table>
-    <tr>
-        <th class="bold">name</th>
-        <th class="bold">country</th>
-        <th class="bold">series</th>
-    </tr>
-    <th:block th:each="car: ${cars}">
+    <div th:switch="${locale}">
+        <h1 th:case="'en'">CARS</h1>
+        <h1 th:case="'ru'">МАШИНЫ</h1>
+        <h1 th:case="*">----</h1>
+    </div>
+    <table>
         <tr>
-            <th th:text = "${car.name}"></th>
-            <th th:text = "${car.country}"></th>
-            <th th:text = "${car.series}"></th>
+            <th class="bold">name</th>
+            <th class="bold">country</th>
+            <th class="bold">series</th>
         </tr>
-    </th:block>
-</table>
+        <th:block th:each="car: ${cars}">
+            <tr>
+                <th th:text="${car.name}"></th>
+                <th th:text="${car.country}"></th>
+                <th th:text="${car.series}"></th>
+            </tr>
+        </th:block>
+    </table>
+
 </body>
 </html>
