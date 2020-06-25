@@ -14,32 +14,32 @@ import web.service.UserService;
 import java.util.List;
 
 @Controller
-public class UserController {
+public class AdminController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("/all")
+    @GetMapping("/admin/all")
     public String showUsers(ModelMap model) {
         List<User> list = userService.getAllUsers();
         model.addAttribute("users", list);
         return "users";
     }
 
-    @PostMapping("/delete")
+    @PostMapping("/admin/delete")
     public String deleteUser(@RequestParam long id) {
         userService.deleteUser(id);
         return "redirect:/all";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/admin/add")
     public String addUser(@RequestParam String name, @RequestParam String password) {
         User user = new User(name, password);
         userService.saveUser(user);
         return "redirect:/all";
     }
 
-    @PostMapping("/change")
+    @PostMapping("/admin/change")
     public String changeUser(@RequestParam long id, @RequestParam String name, @RequestParam String password) {
         User user = new User(id, name, password);
         userService.changeUser(user);
