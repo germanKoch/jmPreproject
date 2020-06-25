@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: german
+Build-Jdk: 11.0.7
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: ark
+Main-Class: ${start-class}
+
