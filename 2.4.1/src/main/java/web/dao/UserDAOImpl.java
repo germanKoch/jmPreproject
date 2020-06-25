@@ -15,6 +15,11 @@ public class UserDAOImpl implements UserDAO {
     private SessionFactory sessionFactory;
 
     @Override
+    public User getUserById(long id) {
+        return sessionFactory.getCurrentSession().load(User.class, id);
+    }
+
+    @Override
     public List<User> getAllUsers() {
         return sessionFactory.getCurrentSession().createQuery("from User").list();
     }
@@ -27,12 +32,19 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void deleteUser(long id) {
         Query query = sessionFactory.getCurrentSession().createQuery("delete User where id = :id");
-        query.setParameter("id",id);
+        query.setParameter("id", id);
         query.executeUpdate();
     }
 
     @Override
     public void changeUser(User user) {
         sessionFactory.getCurrentSession().update(user);
+    }
+
+    @Override
+    public User getUserByName(String name) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from User where name = :name");
+        query.setParameter("name", name);
+        return (User) query.getResultList().get(0);
     }
 }
