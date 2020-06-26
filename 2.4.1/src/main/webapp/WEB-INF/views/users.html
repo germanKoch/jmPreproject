@@ -34,22 +34,25 @@
             <div class="userBlock">
                 <div class="item" th:text="${user.id}"></div>
                 <div class="item" th:text="${user.name}"></div>
+                <div class="item" th:text="${user.surname}"></div>
                 <div class="item" th:text="${user.password}"></div>
-                <form action="/admin/delete" method="post" class="delButton item">
+                <form action="/delete" method="post" class="delButton item">
                     <button name="id" th:value="${user.id}">Delete</button>
                 </form>
             </div>
             <div class="changeBlock">
-                <form action="/admin/change" method="post">
+                <form action="/change" method="post">
                     <button name="id" th:value="${user.id}">Change</button>
                     <input type="text" required="required" placeholder="name" name="name">
+                    <input type="text" required="required" placeholder="surname" name="surname">
                     <input type="text" required="required" placeholder="password" name="password">
                 </form>
             </div>
         </div>
     </div>
-    <form action="/admin/add" method="post">
+    <form action="/add" method="post">
         <input type="text" required="required" placeholder="name" name="name">
+        <input type="text" required="required" placeholder="surname" name="surname">
         <input type="text" required="required" placeholder="password" name="password">
         <button type="submit">add</button>
     </form>

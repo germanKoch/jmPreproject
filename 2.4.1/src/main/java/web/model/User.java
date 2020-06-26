@@ -1,16 +1,12 @@
 package web.model;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Set;
 
 @Entity
-@Table(name = "users")
-public class User implements UserDetails {
+@Table(name = "Users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,23 +15,25 @@ public class User implements UserDetails {
     private String name;
 
     @Column
-    private String password;
+    private String surname;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Role> roles;
+    @Column
+    private String password;
 
     public User() {
 
     }
 
-    public User(Long id, String name, String password) {
+    public User(Long id, String name, String surname, String password) {
         this.id = id;
         this.name = name;
+        this.surname = surname;
         this.password = password;
     }
 
-    public User(String name, String password) {
+    public User(String name, String surname, String password) {
         this.name = name;
+        this.surname = surname;
         this.password = password;
     }
 
@@ -43,8 +41,16 @@ public class User implements UserDetails {
         return id;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setId(Long id) {
@@ -55,46 +61,11 @@ public class User implements UserDetails {
         this.name = name;
     }
 
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getRoles();
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return name;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 }
