@@ -33,15 +33,15 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public String addUser(@RequestParam String name, @RequestParam String password) {
-        User user = new User(name, password);
+    public String addUser(@RequestParam String name, @RequestParam String surname, @RequestParam String password) {
+        User user = new User(name, surname, password);
         userService.addUser(user);
         return "redirect:/all";
     }
 
     @PostMapping("/change")
-    public String changeUser(@RequestParam long id, @RequestParam String name, @RequestParam String password) {
-        User user = new User(id, name, password);
+    public String changeUser(@RequestParam long id, @RequestParam String name, @RequestParam String surname, @RequestParam String password) {
+        User user = new User(id, name, surname, password);
         userService.changeUser(user);
         return "redirect:/all";
     }
