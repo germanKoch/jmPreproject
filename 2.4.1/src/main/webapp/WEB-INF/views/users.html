@@ -34,7 +34,6 @@
             <div class="userBlock">
                 <div class="item" th:text="${user.id}"></div>
                 <div class="item" th:text="${user.name}"></div>
-                <div class="item" th:text="${user.surname}"></div>
                 <div class="item" th:text="${user.password}"></div>
                 <form action="/delete" method="post" class="delButton item">
                     <button name="id" th:value="${user.id}">Delete</button>
