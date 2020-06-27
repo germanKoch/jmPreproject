@@ -15,25 +15,20 @@ public class User {
     private String name;
 
     @Column
-    private String surname;
-
-    @Column
     private String password;
 
     public User() {
 
     }
 
-    public User(Long id, String name, String surname, String password) {
+    public User(Long id, String name, String password) {
         this.id = id;
         this.name = name;
-        this.surname = surname;
         this.password = password;
     }
 
-    public User(String name, String surname, String password) {
+    public User(String name, String password) {
         this.name = name;
-        this.surname = surname;
         this.password = password;
     }
 
@@ -43,10 +38,6 @@ public class User {
 
     public String getName() {
         return name;
-    }
-
-    public String getSurname() {
-        return surname;
     }
 
     public String getPassword() {
@@ -59,10 +50,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public void setPassword(String password) {
