@@ -20,6 +20,19 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public User getUserById(long id) {
+        return sessionFactory.getCurrentSession().load(User.class, id);
+    }
+
+    @Override
+    public User getUserByName(String name) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from User where name = :name");
+        query.setParameter("name",name);
+
+        return (User) query.getResultList().get(0);
+    }
+
+    @Override
     public void addUser(User user) {
         sessionFactory.getCurrentSession().save(user);
     }

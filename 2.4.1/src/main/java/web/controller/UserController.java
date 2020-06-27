@@ -35,7 +35,7 @@ public class UserController {
     @PostMapping("/add")
     public String addUser(@RequestParam String name, @RequestParam String password) {
         User user = new User(name, password);
-        userService.addUser(user);
+        userService.saveUser(user);
         return "redirect:/all";
     }
 
