@@ -24,7 +24,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="803cbcfa-ba4f-4887-a0fc-7ce9f3943200" name="Default Changelist" comment="" />
+    <list default="true" id="803cbcfa-ba4f-4887-a0fc-7ce9f3943200" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +147,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593264527269</updated>
-      <workItem from="1593264542446" duration="2767000" />
+      <workItem from="1593264542446" duration="3296000" />
     </task>
     <servers />
   </component>
@@ -166,10 +170,10 @@
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
     <state x="439" y="196" key="#com.intellij.execution.impl.EditConfigurationsDialog/32.0.1888.1080@32.0.1888.1080" timestamp="1593264754318" />
-    <state x="316" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1593266969500">
+    <state x="316" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1593267527739">
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
-    <state x="316" y="222" key="#com.intellij.ide.util.MemberChooser/32.0.1888.1080@32.0.1888.1080" timestamp="1593266969500" />
+    <state x="316" y="222" key="#com.intellij.ide.util.MemberChooser/32.0.1888.1080@32.0.1888.1080" timestamp="1593267527739" />
     <state width="0" height="0" key="GridCell.Tab.0.bottom" timestamp="1593266894732">
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
