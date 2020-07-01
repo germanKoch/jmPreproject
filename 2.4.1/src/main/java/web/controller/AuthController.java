@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import web.model.Role;
 import web.model.User;
 import web.service.UserService;
+import web.service.UserServiceImpl;
 
 import java.util.Collections;
 

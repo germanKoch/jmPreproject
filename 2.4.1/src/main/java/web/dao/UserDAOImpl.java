@@ -1,6 +1,5 @@
 package web.dao;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,9 +26,10 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public User getUserByName(String name) {
         Query query = sessionFactory.getCurrentSession().createQuery("from User where name = :name");
-        query.setParameter("name",name);
+        query.setParameter("name", name);
+        List<User> list = query.getResultList();
 
-        return (User) query.getResultList().get(0);
+        return !list.isEmpty() ? list.get(0) : null;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void deleteUser(long id) {
         Query query = sessionFactory.getCurrentSession().createQuery("delete User where id = :id");
-        query.setParameter("id",id);
+        query.setParameter("id", id);
         query.executeUpdate();
     }
 

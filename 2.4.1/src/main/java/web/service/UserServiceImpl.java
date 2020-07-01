@@ -2,7 +2,6 @@ package web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,24 +13,24 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService, UserDetailsService {
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserDAO userDAO;
 
-    @Transactional
     @Override
+    @Transactional
     public User getUserById(long id){
         return userDAO.getUserById(id);
     }
 
-    @Transactional
     @Override
+    @Transactional
     public List<User> getAllUsers() {
         return userDAO.getAllUsers();
     }
 
-    @Transactional
     @Override
+    @Transactional
     public boolean saveUser(User user) {
         User userFromDB = userDAO.getUserByName(user.getUsername());
 
@@ -45,8 +44,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return true;
     }
 
-    @Transactional
     @Override
+    @Transactional
     public boolean deleteUser(long userId) {
         if (userDAO.getUserById(userId) != null) {
             userDAO.deleteUser(userId);
@@ -55,15 +54,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return false;
     }
 
-    @Transactional
     @Override
+    @Transactional
     public void changeUser(User user) {
         userDAO.changeUser(user);
     }
 
-    @Transactional
-
     @Override
+    @Transactional
     public UserDetails loadUserByUsername(String name) {
         User user = userDAO.getUserByName(name);
 

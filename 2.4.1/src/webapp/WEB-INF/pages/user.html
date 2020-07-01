@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<div th:insert="logout :: logout"></div>
+<p>Hello <span th:text="${name}"></span></p>
+<p>Your password is <span th:text="${password}"></span></p>
+</body>
+</html>
