@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02915f38-b335-4a56-90c0-f74995e5aaf6" name="Default Changelist" comment="" />
+    <list default="true" id="803cbcfa-ba4f-4887-a0fc-7ce9f3943200" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,6 +139,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="462" y="120" key="#Project_Structure" timestamp="1593584301019">
       <screen x="32" y="0" width="1888" height="1080" />
@@ -164,22 +167,22 @@
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
     <state x="713" y="291" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/32.0.1888.1080@32.0.1888.1080" timestamp="1593584545956" />
-    <state width="1525" height="342" key="GridCell.Tab.0.bottom" timestamp="1593591119590">
+    <state width="606" height="287" key="GridCell.Tab.0.bottom" timestamp="1593591221545">
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
-    <state width="1525" height="342" key="GridCell.Tab.0.bottom/32.0.1888.1080@32.0.1888.1080" timestamp="1593591119590" />
-    <state width="1525" height="342" key="GridCell.Tab.0.center" timestamp="1593591119589">
+    <state width="606" height="287" key="GridCell.Tab.0.bottom/32.0.1888.1080@32.0.1888.1080" timestamp="1593591221545" />
+    <state width="606" height="287" key="GridCell.Tab.0.center" timestamp="1593591221543">
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
-    <state width="1525" height="342" key="GridCell.Tab.0.center/32.0.1888.1080@32.0.1888.1080" timestamp="1593591119589" />
-    <state width="1525" height="342" key="GridCell.Tab.0.left" timestamp="1593591119588">
+    <state width="606" height="287" key="GridCell.Tab.0.center/32.0.1888.1080@32.0.1888.1080" timestamp="1593591221543" />
+    <state width="606" height="287" key="GridCell.Tab.0.left" timestamp="1593591221541">
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
-    <state width="1525" height="342" key="GridCell.Tab.0.left/32.0.1888.1080@32.0.1888.1080" timestamp="1593591119588" />
-    <state width="1525" height="342" key="GridCell.Tab.0.right" timestamp="1593591119590">
+    <state width="606" height="287" key="GridCell.Tab.0.left/32.0.1888.1080@32.0.1888.1080" timestamp="1593591221541" />
+    <state width="606" height="287" key="GridCell.Tab.0.right" timestamp="1593591221544">
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
-    <state width="1525" height="342" key="GridCell.Tab.0.right/32.0.1888.1080@32.0.1888.1080" timestamp="1593591119590" />
+    <state width="606" height="287" key="GridCell.Tab.0.right/32.0.1888.1080@32.0.1888.1080" timestamp="1593591221544" />
     <state width="1525" height="342" key="GridCell.Tab.1.bottom" timestamp="1593591119592">
       <screen x="32" y="0" width="1888" height="1080" />
     </state>
