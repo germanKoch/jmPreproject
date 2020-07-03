@@ -10,20 +10,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HelloController { ;
-
-    @GetMapping("/hello")
-    public String getHello() {
-        return "hello";
-    }
+public class UserController {
 
     @GetMapping("/user")
     public String getUser(ModelMap model) {
         UserDetails user  = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String name = user.getUsername();
-        String password = user.getPassword();
-        model.addAttribute("name",name);
-        model.addAttribute("password",password);
+        model.addAttribute("user", user);
         return "user";
     }
 }

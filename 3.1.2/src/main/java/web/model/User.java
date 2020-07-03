@@ -104,4 +104,14 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public String getStringRoles() {
+        Set<Role> roles = getRoles();
+        StringBuilder result = new StringBuilder();
+        for (Role role: roles) {
+            result.append(role.getShortName()).append(" ");
+        }
+
+        return result.toString();
+    }
 }

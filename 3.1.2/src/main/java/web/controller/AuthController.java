@@ -16,24 +16,24 @@ import java.util.Collections;
 @Controller
 public class AuthController {
 
-    @Autowired
-    UserService userService;
-
-    @GetMapping("/registration")
-    public String showRegistration(Model model) {
-        return "registration";
-    }
-
-    @PostMapping("/registration")
-    public String registrate(Model model, @RequestParam String name, @RequestParam String password) {
-        User newUser = new User(name, password);
-        newUser.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
-        if (!userService.saveUser(newUser)) {
-            model.addAttribute("usernameError", "This user is already exists.");
-            return "registration";
-        }
-        return "redirect:/user";
-    }
+//    @Autowired
+//    UserService userService;
+//
+//    @GetMapping("/registration")
+//    public String showRegistration(Model model) {
+//        return "registration";
+//    }
+//
+//    @PostMapping("/registration")
+//    public String registrate(Model model, @RequestParam String name, @RequestParam String password) {
+//        User newUser = new User(name, password);
+//        newUser.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
+//        if (!userService.saveUser(newUser)) {
+//            model.addAttribute("usernameError", "This user is already exists.");
+//            return "registration";
+//        }
+//        return "redirect:/user";
+//    }
 
     @GetMapping("/login")
     public String showLogin() {
