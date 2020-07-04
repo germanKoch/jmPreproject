@@ -38,8 +38,6 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
-        user.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
-        user.setPassword(user.getPassword());
         userDAO.addUser(user);
         return true;
     }
@@ -56,8 +54,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void changeUser(User user) {
+    public boolean changeUser(User user) {
+        User userFromDB = userDAO.getUserByName(user.getUsername());
+
+        if (userFromDB != null && !user.getId().equals(userFromDB.getId())) {
+            return false;
+        }
+
         userDAO.changeUser(user);
+        return true;
     }
 
     @Override

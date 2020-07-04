@@ -22,7 +22,7 @@ public interface UserService extends UserDetailsService {
 
     public boolean deleteUser(long userId);
 
-    public void changeUser(User user);
+    public boolean changeUser(User user);
 
     @Override
     public UserDetails loadUserByUsername(String name);
