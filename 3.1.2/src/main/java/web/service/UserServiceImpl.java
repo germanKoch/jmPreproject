@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
     public boolean changeUser(User user) {
         User userFromDB = userDAO.getUserByName(user.getUsername());
 
-        if (userFromDB != null && !user.getId().equals(userFromDB.getId())) {
+        if (userFromDB != null && user.getId().equals(userFromDB.getId())) {
             return false;
         }
 

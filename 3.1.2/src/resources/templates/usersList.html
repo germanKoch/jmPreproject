@@ -46,7 +46,7 @@
                             <td th:text="${user.getStringRoles()}"></td>
                             <td>
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ModalEdit"
-                                        th:data-id="${user.id}" th:data-name="${user.name}" th:data-password="${user.password}">Edit</button>
+                                        th:data-id="${user.id}" th:data-name="${user.name}" th:data-password="${user.password}" th:data-roles="${user.getStringRoles()}">Edit</button>
                             </td>
                             <td>
                                 <form action="/admin/delete" method="post">
@@ -102,6 +102,11 @@
                                 <label for="InputPassword">Password</label>
                                 <input required="required" type="password" class="form-control" id="InputPassword" placeholder="Password" name="password">
                             </div>
+                            <select multiple class="form-control" id="RoleSelect1" name="roles" required="required">
+                                <th:block th:each="role: ${roles}">
+                                    <option class="optional-edit" th:text="${role.getShortName()}" th:value="${role.name}"></option>
+                                </th:block>
+                            </select>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -117,7 +122,15 @@
                 var id = button.data('id')
                 var name = button.data('name')
                 var password = button.data('password')
+                var roles = button.data('roles')
+
                 var modal = $(this)
+                var optional = $('.optional-edit')
+                optional.each(function () {
+                    if (roles.includes($(this).text())) {
+                        $(this).prop('selected', true);
+                    }
+                });
                 modal.find('#InputName').val(name);
                 modal.find('#InputPassword').val(password);
                 modal.find('#SendChanges').val(id);
