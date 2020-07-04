@@ -8,8 +8,24 @@
 </head>
 <body>
 <div layout:fragment="content">
-    <p>Hello <span th:text="${user.username}"></span></p>
-    <p>Your password is <span th:text="${user.password}"></span></p>
+    <table class="table table-hover bg-white">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">Roles</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" th:text="${user.id}"></th>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.password}"></td>
+                <td th:text="${user.getStringRoles()}"></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
