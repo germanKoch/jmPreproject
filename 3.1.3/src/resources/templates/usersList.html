@@ -8,20 +8,15 @@
 </head>
 <body>
     <div layout:fragment="content">
-        <th:block th:if="${error != null}">
-            <div class="alert alert-danger m-2" role="alert" th:text="${error}">
-            </div>
-        </th:block>
-
         <div class="row">
             <h1 class="col-md-12 p-5">Admin Panel</h1>
         </div>
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#all">All Users</a>
+                <a class="nav-link active" data-toggle="tab" id="all-nav" href="#all">All Users</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#new">New User</a>
+                <a class="nav-link" data-toggle="tab" id="new-nav" href="#new">New User</a>
             </li>
         </ul>
         <div class="tab-content bg-white">
@@ -37,29 +32,29 @@
                         <th scope="col">Delete</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <th:block th:each="user: ${users}">
-                        <tr>
-                            <th scope="row" th:text="${user.id}"></th>
-                            <td th:text="${user.name}"></td>
-                            <td th:text="${user.password}"></td>
-                            <td th:text="${user.getStringRoles()}"></td>
-                            <td>
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ModalEdit"
-                                        th:data-id="${user.id}" th:data-name="${user.name}" th:data-password="${user.password}" th:data-roles="${user.getStringRoles()}">Edit</button>
-                            </td>
-                            <td>
-                                <form action="/admin/delete" method="post">
-                                    <button name="id" th:value="${user.id}" class="btn btn-danger">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </th:block>
+                    <tbody class="userList">
+<!--                    <th:block th:each="user: ${users}">-->
+<!--                        <tr>-->
+<!--                            <th scope="row" th:text="${user.id}"></th>-->
+<!--                            <td th:text="${user.name}"></td>-->
+<!--                            <td th:text="${user.password}"></td>-->
+<!--                            <td th:text="${user.getStringRoles()}"></td>-->
+<!--                            <td>-->
+<!--                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ModalEdit"-->
+<!--                                        th:data-id="${user.id}" th:data-name="${user.name}" th:data-password="${user.password}" th:data-roles="${user.getStringRoles()}">Edit</button>-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                <form action="/admin/delete" method="post">-->
+<!--                                    <button name="id" th:value="${user.id}" class="btn btn-danger">Delete</button>-->
+<!--                                </form>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </th:block>-->
                     </tbody>
                 </table>
             </div>
             <div class="tab-pane fade" id="new">
-                <form action="/admin/add" method="post" class="p-5">
+                <form method="get" class="p-5" id="AddForm">
                     <div class="form-group">
                         <label for="InputName1">Name</label>
                         <input required="required" type="text" class="form-control" id="InputName1" placeholder="Name" name="name">
@@ -92,7 +87,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/admin/change" method="post" id="formChange">
+                        <form method="get" id="ChangeForm">
                             <div class="form-group">
                                 <label for="InputName">Name</label>
                                 <input required="required" type="text" class="form-control" id="InputName" placeholder="Name" name="name">
@@ -102,7 +97,7 @@
                                 <label for="InputPassword">Password</label>
                                 <input required="required" type="password" class="form-control" id="InputPassword" placeholder="Password" name="password">
                             </div>
-                            <select multiple class="form-control" id="RoleSelect1" name="roles" required="required">
+                            <select multiple class="form-control" id="RoleSelect" name="roles" required="required">
                                 <th:block th:each="role: ${roles}">
                                     <option class="optional-edit" th:text="${role.getShortName()}" th:value="${role.name}"></option>
                                 </th:block>
@@ -111,31 +106,11 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" form="formChange" class="btn btn-primary" name="id" id="SendChanges">Save changes</button>
+                        <button type="submit" form="ChangeForm" class="btn btn-primary" name="id" id="SendChanges">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            $('#ModalEdit').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget)
-                var id = button.data('id')
-                var name = button.data('name')
-                var password = button.data('password')
-                var roles = button.data('roles')
-
-                var modal = $(this)
-                var optional = $('.optional-edit')
-                optional.each(function () {
-                    if (roles.includes($(this).text())) {
-                        $(this).prop('selected', true);
-                    }
-                });
-                modal.find('#InputName').val(name);
-                modal.find('#InputPassword').val(password);
-                modal.find('#SendChanges').val(id);
-            })
-        </script>
     </div>
 </body>
 </html>

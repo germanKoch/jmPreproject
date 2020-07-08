@@ -120,6 +120,7 @@ public class User implements UserDetails {
         return true;
     }
 
+    //todo - убрать нахрен
     public String getStringRoles() {
         Set<Role> roles = getRoles();
         StringBuilder result = new StringBuilder();

@@ -117,5 +117,7 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="jquery-3.2.1.slim" level="application" />
     <orderEntry type="library" name="popper.js" level="application" />
+    <orderEntry type="library" name="jquery-3.0.0.slim" level="application" />
+    <orderEntry type="library" name="jquery-2.2.4" level="application" />
   </component>
 </module>

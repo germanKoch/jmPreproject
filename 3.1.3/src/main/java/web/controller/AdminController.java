@@ -6,10 +6,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 import web.model.Role;
 import web.model.User;
 import web.service.RoleService;
@@ -20,7 +19,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Controller
+@RestController
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -29,60 +29,50 @@ public class AdminController {
     @Autowired
     private RoleService roleService;
 
-    @GetMapping("admin")
-    public String redirectAdmin() {
-        return "redirect:admin/all";
+    @GetMapping("/ex")
+    public String getEx() {
+        return "hz";
     }
 
-    @GetMapping("admin/all")
-    public String showUsers(ModelMap model, @RequestParam(required = false, name = "error") String error) {
-        List<User> list = userService.getAllUsers();
-        List<Role> listRole = roleService.getAllRoles();
-        model.addAttribute("roles", listRole);
-        model.addAttribute("users", list);
-        model.addAttribute("user", getUser());
-        if (error != null) {
-            model.addAttribute("error", error);
-        }
-        return "usersList";
+    @GetMapping("/all")
+    public List<User> getUserList() {
+        return userService.getAllUsers();
     }
 
-    @PostMapping("admin/delete")
-    public String deleteUser(@RequestParam long id, RedirectAttributes redirectAttributes) {
+    @PostMapping("/delete")
+    public long deleteUser(@RequestParam long id) {
         if (userService.deleteUser(id)) {
-            return "redirect:/admin/all";
+            return id;
+        } else {
+            throw new RuntimeException("error");
         }
-        redirectAttributes.addAttribute("error", "This User is not exists");
-        return "redirect:/admin/all";
     }
 
-    @PostMapping("admin/add")
-    public String addUser(@RequestParam String name, @RequestParam String password, @RequestParam String[] roles, RedirectAttributes redirectAttributes) {
-        User user = new User(name, password, getRolesFromStrings(roles));
+    //todo: getStringROles -- very hrenovo
+
+    @PostMapping("/add")
+    public User addUser(@RequestParam String name, @RequestParam String password, @RequestParam String roles) {
+        User user = new User(name, password, getRolesFromString(roles));
         if (userService.saveUser(user)) {
-            return "redirect:/admin/all";
+            return userService.getUserByName(name);
+        } else {
+            throw new RuntimeException("error");
         }
-        redirectAttributes.addAttribute("error", "User with the same name already exists");
-        return "redirect:/admin/all";
     }
 
-    @PostMapping("admin/change")
-    public String changeUser(@RequestParam long id, @RequestParam String name, @RequestParam String password, @RequestParam String[] roles, RedirectAttributes redirectAttributes) {
-        User user = new User(id, name, password, getRolesFromStrings(roles));
+    @PostMapping("/change")
+    public User changeUser(@RequestParam long id, @RequestParam String name, @RequestParam String password, @RequestParam String roles) {
+        User user = new User(id, name, password, getRolesFromString(roles));
         if (userService.changeUser(user)) {
-            return "redirect:/admin/all";
+            return user;
+        } else {
+            throw new RuntimeException("error");
         }
-        redirectAttributes.addAttribute("error", "User with the same name already exists");
-        return "redirect:/admin/all";
     }
 
-    public UserDetails getUser() {
-        return (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    }
-
-    public Set<Role> getRolesFromStrings(String[] rolesName) {
+    public Set<Role> getRolesFromString(String rolesName) {
         Set<Role> roles = new HashSet<>();
-        for (String role: rolesName) {
+        for (String role : rolesName.split(",")) {
             roles.add(roleService.getRoleByName(role));
         }
 

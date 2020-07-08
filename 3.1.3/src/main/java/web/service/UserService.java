@@ -24,6 +24,10 @@ public interface UserService extends UserDetailsService {
 
     public boolean changeUser(User user);
 
+    public User getUserByName(String name);
+
     @Override
     public UserDetails loadUserByUsername(String name);
+
+
 }
