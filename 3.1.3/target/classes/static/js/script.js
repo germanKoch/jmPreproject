@@ -8,13 +8,12 @@ $(document).ready(function () {
         }
     })
 
-//todo: добавление строки отдельным методом.
 
     $('#AddForm').on("submit", function (event) {
         event.preventDefault()
         var name = $('#InputName1').val()
         var password = $('#InputPassword1').val()
-        var roles = $('#RoleSelect1').val().toString()
+        var roles = $('#RoleSelect1').val().toString().split(",")
         $.ajax("admin/add", {
             data: {
                 name: name,
@@ -28,7 +27,6 @@ $(document).ready(function () {
                 $('#new').removeClass("show active")
                 $('#new-nav').removeClass("active")
 
-                var roleArr = roles.split(",");
                 addNewLine(user.id, user.name, user.password, user.roles)
             }
         })

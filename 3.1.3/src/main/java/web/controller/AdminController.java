@@ -48,10 +48,8 @@ public class AdminController {
         }
     }
 
-    //todo: getStringROles -- very hrenovo
-
     @PostMapping("/add")
-    public User addUser(@RequestParam String name, @RequestParam String password, @RequestParam String roles) {
+    public User addUser(@RequestParam String name, @RequestParam String password, @RequestParam(value="roles[]") String[] roles) {
         User user = new User(name, password, getRolesFromString(roles));
         if (userService.saveUser(user)) {
             return userService.getUserByName(name);
@@ -61,7 +59,7 @@ public class AdminController {
     }
 
     @PostMapping("/change")
-    public User changeUser(@RequestParam long id, @RequestParam String name, @RequestParam String password, @RequestParam String roles) {
+    public User changeUser(@RequestParam long id, @RequestParam String name, @RequestParam String password, @RequestParam(value="roles[]")  String[] roles) {
         User user = new User(id, name, password, getRolesFromString(roles));
         if (userService.changeUser(user)) {
             return user;
@@ -70,9 +68,9 @@ public class AdminController {
         }
     }
 
-    public Set<Role> getRolesFromString(String rolesName) {
+    public Set<Role> getRolesFromString(String[] rolesName) {
         Set<Role> roles = new HashSet<>();
-        for (String role : rolesName.split(",")) {
+        for (String role : rolesName) {
             roles.add(roleService.getRoleByName(role));
         }
 
